@@ -1,0 +1,27 @@
+<footer class="page_footer">
+	<ol class="footer_links">
+		{% if config.DOCUMENTATION_LINK %}
+			<li><a href="{{ config.DOCUMENTATION_LINK }}">API Docs</a></li>
+		{% endif %}
+		<li><a href="http://cityofchicago.org/311">Chicago 311</a></li>
+	</ol>
+
+	<div class="footer_logos">
+		<a href="http://cityofchicago.org/" class="logo logo_chicago">City of Chicago</a>
+		<a href="http://codeforamerica.org/" class="logo logo_cfa">Code for America</a>
+	</div>
+
+	{% if config.GOOGLE_ANALYTICS_ACCOUNT %}
+		<script type="text/javascript">
+		  var _gaq = _gaq || [];
+		  _gaq.push(['_setAccount', '{{ config.GOOGLE_ANALYTICS_ACCOUNT }}']);
+		  _gaq.push(['_trackPageview']);
+
+		  (function() {
+		    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		  })();
+		</script>
+	{% endif %}
+</footer>

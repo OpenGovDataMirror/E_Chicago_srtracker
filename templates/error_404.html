@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block page_title %}Page Not Found - 311 Service Tracker{% endblock %}
+
+{% block page_class %}detail_page{% endblock %}
+
+{% block stylesheets %}
+	{{ super() }}
+	<link rel="stylesheet" href="{{ url_for("static", filename="css/service_request.css") }}" type="text/css" />
+{% endblock %}
+
+{% block content %}
+	<article class="main_content">
+		<h1>There's no page at this address!</h1>
+		
+		<p>
+			It looks like something’s gone wrong—you’ve arrived at this page but there's nothing here.
+			If you got here by typing the URL into your browser, try checking that you haven't made a typo.
+			Otherwise, <a href="{{ url_for('index') }}">click here to head back to the main page of 311 Service Tracker</a>.
+		</p>
+
+	</article>
+{% endblock %}
